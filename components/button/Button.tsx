@@ -1,0 +1,56 @@
+import React from 'react';
+import {
+  StyleProp,
+  StyleSheet,
+  Text,
+  TextStyle,
+  TouchableOpacity,
+  ViewStyle,
+} from 'react-native';
+import colors from '@/constants/colors';
+
+interface ButtonProps {
+  text: string;
+  style?: StyleProp<ViewStyle>;
+  textStyle?: StyleProp<TextStyle>;
+  onPress?: () => void;
+  color?: string;
+  disabled?: boolean;
+}
+
+function Button({
+  text,
+  disabled = false,
+  style,
+  textStyle,
+  color = colors.C06,
+  onPress,
+}: Readonly<ButtonProps>) {
+  return (
+    <TouchableOpacity
+      style={[styles.container, style, { backgroundColor: color }]}
+      onPress={onPress}
+      activeOpacity={0.7}
+    >
+      <Text style={[styles.text, textStyle]}>{text}</Text>
+    </TouchableOpacity>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    height: 60,
+    width: '100%',
+    justifyContent: 'center',
+    padding: 10,
+    borderRadius: 10,
+  },
+  text: {
+    fontSize: 18,
+    fontFamily: 'Poppins-SemiBold',
+    textAlign: 'center',
+    color: 'white',
+  },
+});
+
+export default Button;
