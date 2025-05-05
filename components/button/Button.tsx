@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import colors from '@/constants/colors';
 
-interface ButtonProps {
+export interface ButtonProps {
   text: string;
   style?: StyleProp<ViewStyle>;
   textStyle?: StyleProp<TextStyle>;

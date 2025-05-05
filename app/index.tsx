@@ -24,7 +24,6 @@ export default function Index() {
             onPress={() => router.navigate('/onboarding')}
             text={'Go To Splash Screen'}
           />
-          ;{' '}
         </View>
       </ScrollView>
     </SafeAreaView>
