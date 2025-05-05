@@ -3,12 +3,14 @@ import React from 'react';
 
 interface InputLabelTextProps {
   text: string;
+  note?: string;
 }
 
-function InputLabelText({ text }: Readonly<InputLabelTextProps>) {
+function InputLabelText({ text, note }: Readonly<InputLabelTextProps>) {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>{text}</Text>
+      {note && <Text style={styles.note}>{note}</Text>}
     </View>
   );
 }
@@ -16,12 +18,19 @@ function InputLabelText({ text }: Readonly<InputLabelTextProps>) {
 const styles = StyleSheet.create({
   container: {
     width: '100%',
+    flexDirection: 'row',
+    gap: 4,
+    alignItems: 'center',
   },
   text: {
     textAlign: 'left',
     fontSize: 15,
     fontFamily: 'Poppins-Regular',
-    color: '#293540',
+  },
+  note: {
+    fontSize: 10,
+    fontFamily: 'Poppins-Regular',
+    color: 'rgba(41, 53, 63, 57)',
   },
 });
 

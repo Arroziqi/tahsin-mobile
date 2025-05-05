@@ -10,19 +10,20 @@ import {
 
 interface TextLinkProps {
   text: string;
-  url: string;
+  url?: string;
   style?: StyleProp<TextStyle>;
+  onPress?: () => void;
 }
 
-function TextLink({ text, url, style }: Readonly<TextLinkProps>) {
+function TextLink({ text, url, style, onPress }: Readonly<TextLinkProps>) {
   const handlePress = () => {
-    Linking.openURL(url).catch((err) =>
+    Linking.openURL(url!).catch((err) =>
       console.warn('Failed to open URL:', err),
     );
   };
 
   return (
-    <TouchableOpacity onPress={handlePress}>
+    <TouchableOpacity onPress={onPress ?? handlePress}>
       <Text style={[styles.link, style]}>{text}</Text>
     </TouchableOpacity>
   );
