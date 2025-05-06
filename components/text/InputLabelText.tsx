@@ -1,15 +1,16 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleProp, StyleSheet, Text, TextStyle, View } from 'react-native';
 import React from 'react';
 
-interface InputLabelTextProps {
+export interface InputLabelTextProps {
   text: string;
   note?: string;
+  style?: StyleProp<TextStyle>;
 }
 
-function InputLabelText({ text, note }: Readonly<InputLabelTextProps>) {
+function InputLabelText({ text, note, style }: Readonly<InputLabelTextProps>) {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>{text}</Text>
+      <Text style={[styles.text, style]}>{text}</Text>
       {note && <Text style={styles.note}>{note}</Text>}
     </View>
   );

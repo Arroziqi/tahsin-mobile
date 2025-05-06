@@ -1,15 +1,20 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleProp, StyleSheet, Text, TextStyle, View } from 'react-native';
 import React from 'react';
 
 interface FormTitleProps {
   text: string;
   color?: string;
+  style?: StyleProp<TextStyle>;
 }
 
-function FormTitle({ text, color = '#006970' }: Readonly<FormTitleProps>) {
+function FormTitle({
+  text,
+  color = '#006970',
+  style,
+}: Readonly<FormTitleProps>) {
   return (
     <View style={styles.container}>
-      <Text style={[styles.text, { color: '#006970' }]}>{text}</Text>
+      <Text style={[styles.text, { color }, style]}>{text}</Text>
     </View>
   );
 }

@@ -8,11 +8,11 @@ function MediumButton({
   style,
   color = colors.C02,
   ...rest
-}: ButtonProps) {
+}: Readonly<ButtonProps>) {
   return (
     <Button
       text={text}
-      style={styles.button}
+      style={[styles.button, style]}
       color={color}
       {...rest}
       textStyle={styles.textStyles}

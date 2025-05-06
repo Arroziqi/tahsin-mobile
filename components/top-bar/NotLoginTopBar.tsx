@@ -10,7 +10,7 @@ function NotLoginTopBar() {
   return (
     <View style={styles.container}>
       <Pressable>
-        <FontAwesome name="bars" size={33} />
+        <FontAwesome name="bars" size={32} />
       </Pressable>
       <MediumButton
         onPress={() => router.navigate('/auth/signin')}
@@ -25,6 +25,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
+    paddingVertical: 12,
+    paddingHorizontal: 24,
+    backgroundColor: 'white',
   },
 });
 

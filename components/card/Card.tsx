@@ -1,4 +1,11 @@
-import { StyleProp, StyleSheet, Text, TextStyle, View } from 'react-native';
+import {
+  StyleProp,
+  StyleSheet,
+  Text,
+  TextStyle,
+  View,
+  ViewStyle,
+} from 'react-native';
 import React from 'react';
 import colors from '@/constants/colors';
 
@@ -7,6 +14,7 @@ interface CardProps {
   description: string;
   titleStyle?: StyleProp<TextStyle>;
   descriptionStyle?: StyleProp<TextStyle>;
+  style?: StyleProp<ViewStyle>;
   backgroundColor?: string;
 }
 
@@ -15,10 +23,11 @@ function Card({
   description,
   descriptionStyle,
   titleStyle,
+  style,
   backgroundColor = colors.C03,
 }: Readonly<CardProps>) {
   return (
-    <View style={[styles.container, { backgroundColor }]}>
+    <View style={[styles.container, { backgroundColor }, style]}>
       <Text style={[styles.title, titleStyle]}>{title}</Text>
       <Text style={[styles.description, descriptionStyle]}>{description}</Text>
     </View>

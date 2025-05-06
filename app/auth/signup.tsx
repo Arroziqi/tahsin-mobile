@@ -1,10 +1,11 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import InputLabelText from '@/components/text/InputLabelText';
-import TextInput from '@/components/input/TextInput';
+import TextInput from '@/components/input/CustomTextInput';
 import Button from '@/components/button/Button';
 import TextLink from '@/components/text/TextLink';
 import { useRouter } from 'expo-router';
+import PasswordInput from '@/components/input/PasswordInput';
 
 function Signup() {
   const router = useRouter();
@@ -18,7 +19,7 @@ function Signup() {
         </View>
         <View style={styles.inputForm}>
           <InputLabelText text={'Password'} note={'(min. 8 karakter unik)'} />
-          <TextInput textContentType={'password'} />
+          <PasswordInput />
         </View>
         <View style={styles.inputForm}>
           <InputLabelText text={'Email'} />
