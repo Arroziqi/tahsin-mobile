@@ -29,6 +29,12 @@ function Registration() {
           text={'go to step 3'}
           onPress={() => router.navigate('/registration/step3')}
         />
+        <Button
+          text={'go to renew registration'}
+          onPress={() =>
+            router.navigate('/(course-management)/renew-registration')
+          }
+        />
       </CardForm>
     </ScrollScreen>
   );

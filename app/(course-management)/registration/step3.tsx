@@ -5,6 +5,9 @@ import { StyleSheet } from 'react-native';
 import CardForm from '@/components/card/CardForm';
 import PrevNextButton from '@/components/button/PrevNextButton';
 import DataDisplayText from '@/components/text/DataDisplayText';
+import CardView from '@/components/card/CardView';
+import DataText from '@/components/text/DataText';
+import CustomCheckbox from '@/components/CustomCheckbox';
 
 function Step3() {
   return (
@@ -33,6 +36,14 @@ function Step3() {
         <DataDisplayText label={'Nama nama Lengkap'} text={'Ahmad Fadil'} />
         <DataDisplayText label={'Waktu Belajar'} text={'20-12-2004'} />
       </CardForm>
+      <CardView style={styles.cardView}>
+        <DataText style={{ marginLeft: 26 }} text={'Persutujuan Data'} />
+        <CustomCheckbox
+          label={
+            'Saya menyatakan bahwa data yang saya masukkan adalah benar dan saya setuju dengan syarat dan ketentuan yang berlaku.'
+          }
+        />
+      </CardView>
       <PrevNextButton />
     </ScrollScreen>
   );
@@ -47,6 +58,12 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
     flexDirection: 'row',
     justifyContent: 'space-between',
+  },
+  cardView: {
+    paddingVertical: 17,
+    paddingHorizontal: 17,
+    gap: 5,
+    backgroundColor: 'white',
   },
 });
 
