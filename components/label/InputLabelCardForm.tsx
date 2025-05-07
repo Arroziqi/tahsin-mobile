@@ -1,7 +1,7 @@
 import React from 'react';
 import InputLabelText, {
   InputLabelTextProps,
-} from '@/components/text/InputLabelText';
+} from '@/components/label/InputLabelText';
 import { StyleSheet } from 'react-native';
 
 function InputLabelCardForm(props: Readonly<InputLabelTextProps>) {

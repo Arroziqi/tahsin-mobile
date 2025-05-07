@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import InputLabelCardForm from '@/components/text/InputLabelCardForm';
+import InputLabelCardForm from '@/components/label/InputLabelCardForm';
 import CustomDropdown, {
   CustomDropdownProps,
 } from '@/components/CustomDropdown';
@@ -9,7 +9,11 @@ interface InputSelectProps extends CustomDropdownProps {
   label: string;
 }
 
-function InputSelect({ label, data, placeholder }: Readonly<InputSelectProps>) {
+function InputSelectCardForm({
+  label,
+  data,
+  placeholder,
+}: Readonly<InputSelectProps>) {
   return (
     <View style={styles.container}>
       <InputLabelCardForm text={label} />
@@ -24,4 +28,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default InputSelect;
+export default InputSelectCardForm;

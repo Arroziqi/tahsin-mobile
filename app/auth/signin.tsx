@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import InputLabelText from '@/components/text/InputLabelText';
+import InputLabelText from '@/components/label/InputLabelText';
 import TextInput from '@/components/input/CustomTextInput';
 import Button from '@/components/button/Button';
 import TextLink from '@/components/text/TextLink';

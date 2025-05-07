@@ -16,6 +16,8 @@ export interface ButtonProps {
   onPress?: () => void;
   color?: string;
   disabled?: boolean;
+  leadingIcon?: React.ReactNode;
+  trailingIcon?: React.ReactNode;
 }
 
 function Button({
@@ -25,6 +27,8 @@ function Button({
   textStyle,
   color = colors.C06,
   onPress,
+  leadingIcon,
+  trailingIcon,
 }: Readonly<ButtonProps>) {
   return (
     <TouchableOpacity
@@ -32,7 +36,9 @@ function Button({
       onPress={onPress}
       activeOpacity={0.7}
     >
+      {leadingIcon}
       <Text style={[styles.text, textStyle]}>{text}</Text>
+      {trailingIcon}
     </TouchableOpacity>
   );
 }
@@ -44,6 +50,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     padding: 10,
     borderRadius: 10,
+    alignItems: 'center',
+    flexDirection: 'row',
+    gap: 5,
   },
   text: {
     fontSize: 18,

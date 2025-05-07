@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, TextInput, TextInputProps, View } from 'react-native';
 import InputView from '@/components/input/InputView';
 import globalStyles from '@/constants/styles';
-import InputLabelCardForm from '@/components/text/InputLabelCardForm';
+import InputLabelCardForm from '@/components/label/InputLabelCardForm';
 
 interface TextInputCardFormProps extends TextInputProps {
   label: string;

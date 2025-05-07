@@ -7,7 +7,7 @@ import DateTimePicker, {
   DateTimePickerEvent,
 } from '@react-native-community/datetimepicker';
 
-interface DateInputProps {
+export interface DateInputProps {
   minimumDate?: Date;
   maximumDate?: Date;
   currentDate?: Date;

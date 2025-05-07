@@ -1,37 +1,44 @@
 import React, { useMemo, useState } from 'react';
-import RadioGroup, { RadioButtonProps } from 'react-native-radio-buttons-group';
+import RadioGroup, {
+  RadioButtonProps,
+  RadioGroupProps,
+} from 'react-native-radio-buttons-group';
 import colors from '@/constants/colors';
+import { StyleSheet } from 'react-native';
 
-type radioItem = {
-  id: string;
-  label: string;
-  value: string;
-};
-
-interface DataRadioButtons {
-  data: radioItem[];
-}
-
-function RadioButton({ data }: Readonly<DataRadioButtons>) {
+function RadioButton({
+  radioButtons,
+  containerStyle,
+  ...rest
+}: Readonly<RadioGroupProps>) {
   const [selectedId, setSelectedId] = useState<string | undefined>();
 
-  const radioButtons: RadioButtonProps[] = useMemo(
+  const radioButtonsData: RadioButtonProps[] = useMemo(
     () =>
-      data.map((item: radioItem) => ({
+      radioButtons.map((item: RadioButtonProps) => ({
         ...item,
         color: colors.C06,
         borderColor: '#C3c3C3',
+        size: 20,
       })),
-    [data],
+    [radioButtons],
   );
 
   return (
     <RadioGroup
-      radioButtons={radioButtons}
+      radioButtons={radioButtonsData}
       onPress={setSelectedId}
       selectedId={selectedId}
+      containerStyle={[styles.container, containerStyle]}
+      {...rest}
     />
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    alignItems: 'flex-start',
+  },
+});
 
 export default RadioButton;
