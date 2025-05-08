@@ -6,22 +6,22 @@ import { Image } from 'expo-image';
 import { stylesModal } from '@/components/modal/WarningModal';
 
 interface RenewelRegistrationSuccessModalProps {
-  isVisible?: boolean;
+  isVisible: boolean;
+  setIsVisible: (isVisible: boolean) => void;
   term: string;
   email: string;
 }
 
 function RenewelRegistrationSuccessModal({
   isVisible = false,
+  setIsVisible,
   term,
   email,
 }: Readonly<RenewelRegistrationSuccessModalProps>) {
-  const [visible, setVisible] = React.useState(isVisible);
-
   return (
     <CustomModal
-      visible={visible}
-      onClose={() => setVisible(false)}
+      visible={isVisible}
+      onClose={() => setIsVisible(!isVisible)}
       header={
         <Image
           source={require('@/assets/images/icons/check.png')}
@@ -41,7 +41,7 @@ function RenewelRegistrationSuccessModal({
           <Button
             style={stylesModal.button}
             text="Selesai"
-            onPress={() => setVisible(false)}
+            onPress={() => setIsVisible(!isVisible)}
             textStyle={stylesModal.textStyle}
           />
         </View>

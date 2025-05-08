@@ -41,6 +41,13 @@ function _Layout() {
           ),
         }}
       />
+      <Tabs.Screen
+        name="home-login"
+        options={{
+          title: 'home',
+          href: null,
+        }}
+      />
     </Tabs>
   );
 }

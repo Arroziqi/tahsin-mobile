@@ -7,6 +7,14 @@ const globalStyles = StyleSheet.create({
     fontFamily: 'Poppins-Regular',
     paddingHorizontal: 14,
   },
+  flexWrap: {
+    flexWrap: 'wrap',
+    flexDirection: 'row',
+    gap: 10,
+  },
+  flexWrapItem: {
+    width: '45%',
+  },
 });
 
 export default globalStyles;

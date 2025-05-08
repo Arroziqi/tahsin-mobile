@@ -1,16 +1,21 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleProp, StyleSheet, View, ViewStyle } from 'react-native';
 import DataLabel from '@/components/label/DataLabel';
 import DataText from '@/components/text/DataText';
 
 interface DataDisplayTextProps {
   label: string;
   text: string;
+  style?: StyleProp<ViewStyle>;
 }
 
-function DataDisplayText({ label, text }: Readonly<DataDisplayTextProps>) {
+function DataDisplayText({
+  label,
+  text,
+  style,
+}: Readonly<DataDisplayTextProps>) {
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, style]}>
       <DataLabel label={label} />
       <DataText text={text} />
     </View>

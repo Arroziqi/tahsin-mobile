@@ -6,17 +6,37 @@ import { StyleSheet, View } from 'react-native';
 import DataDisplayText from '@/components/text/DataDisplayText';
 import TextInputCardForm from '@/components/input/TextInputCardForm';
 import RadioButtonCardForm from '@/components/input/RadioButtonCardForm';
+import Button from '@/components/button/Button';
+import { useRouter } from 'expo-router';
 
 function Renew() {
+  const router = useRouter();
+
   return (
-    <ScrollScreen>
+    <ScrollScreen style={styles.container}>
       <FormPageTitle text={'Pendaftaran Ulang'} />
-      <CardForm title={'Detail'}>
+      <CardForm title={'Detail'} style={styles.cardForm}>
         <View style={styles.wrap}>
-          <DataDisplayText label={'ID SIswa'} text={'2020202'} />
-          <DataDisplayText label={'Program'} text={'2020202'} />
-          <DataDisplayText label={'Nama Lengkap'} text={'2020202'} />
-          <DataDisplayText label={'ID SIswa'} text={'2020202'} />
+          <DataDisplayText
+            style={styles.dataDisplayText}
+            label={'ID SIswa'}
+            text={'202020212'}
+          />
+          <DataDisplayText
+            style={styles.dataDisplayText}
+            label={'Program'}
+            text={'Tahsin Dasar'}
+          />
+          <DataDisplayText
+            style={styles.dataDisplayText}
+            label={'Nama Lengkap'}
+            text={'Amanda Fadil'}
+          />
+          <DataDisplayText
+            style={styles.dataDisplayText}
+            label={'Term'}
+            text={'2020/2024'}
+          />
         </View>
         <TextInputCardForm
           label={'Nomor Telepon'}
@@ -24,7 +44,11 @@ function Renew() {
           keyboardType={'phone-pad'}
           value={'+62'}
         />
-        <TextInputCardForm label={'Email'} textContentType={'emailAddress'} />
+        <TextInputCardForm
+          label={'Email'}
+          textContentType={'emailAddress'}
+          placeholder={'email@mail.com'}
+        />
         <RadioButtonCardForm
           label={'Jenis Kelas*'}
           radioButtons={[
@@ -40,6 +64,12 @@ function Renew() {
           ]}
         />
       </CardForm>
+      <Button
+        text={'Selanjutnya'}
+        onPress={() =>
+          router.navigate('/(course-management)/renew-registration/review')
+        }
+      />
     </ScrollScreen>
   );
 }
@@ -49,6 +79,20 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     gap: 18,
+    borderBottomWidth: 1,
+    borderColor: '#eaeaea',
+    flexWrap: 'wrap',
+    paddingBottom: 15,
+  },
+  dataDisplayText: {
+    width: '46%',
+  },
+  cardForm: {
+    gap: 15,
+  },
+  container: {
+    paddingVertical: 24,
+    gap: 24,
   },
 });
 

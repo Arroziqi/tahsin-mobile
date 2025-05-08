@@ -1,5 +1,11 @@
 import React from 'react';
-import { ScrollView, StyleProp, StyleSheet, ViewStyle } from 'react-native';
+import {
+  ScrollView,
+  StyleProp,
+  StyleSheet,
+  View,
+  ViewStyle,
+} from 'react-native';
 
 interface ScrollScreenProps {
   children: React.ReactNode;
@@ -8,9 +14,11 @@ interface ScrollScreenProps {
 
 function ScrollScreen({ children, style }: Readonly<ScrollScreenProps>) {
   return (
-    <ScrollView contentContainerStyle={[styles.container, style]}>
-      {children}
-    </ScrollView>
+    <View style={[{ flex: 1, backgroundColor: 'white' }]}>
+      <ScrollView contentContainerStyle={[styles.container, style]}>
+        {children}
+      </ScrollView>
+    </View>
   );
 }
 

@@ -21,7 +21,11 @@ function Signin() {
           <InputLabelText text={'Password'} />
           <PasswordInput />
         </View>
-        <Button style={styles.button} text={'Masuk'} />
+        <Button
+          style={styles.button}
+          text={'Masuk'}
+          onPress={() => router.navigate('/(tabs)/home-login')}
+        />
       </View>
       <View style={styles.textContainer}>
         <Text style={styles.text}>Belum punya akun? </Text>
