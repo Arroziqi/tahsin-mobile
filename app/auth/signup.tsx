@@ -1,34 +1,43 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import InputLabelText from '@/components/label/InputLabelText';
-import TextInput from '@/components/input/CustomTextInput';
 import Button from '@/components/button/Button';
+import TextInput from '@/components/input/CustomTextInput';
+import PasswordInput from '@/components/input/PasswordInput';
+import InputLabelText from '@/components/label/InputLabelText';
 import TextLink from '@/components/text/TextLink';
 import { useRouter } from 'expo-router';
-import PasswordInput from '@/components/input/PasswordInput';
+import React from 'react';
+import { StyleSheet, Text, View } from 'react-native';
+import AuthApi from '../api/auth/auth';
 
 function Signup() {
   const router = useRouter();
+
+  const [username, setUsername] = React.useState('');
+  const [password, setPassword] = React.useState('');
+  const [email, setEmail] = React.useState('');
 
   return (
     <View style={styles.container}>
       <View style={styles.formContainer}>
         <View style={styles.inputForm}>
           <InputLabelText text={'Username'} />
-          <TextInput />
+          <TextInput onChangeText={setUsername} value={username} />
         </View>
         <View style={styles.inputForm}>
           <InputLabelText text={'Password'} note={'(min. 8 karakter unik)'} />
-          <PasswordInput />
+          <PasswordInput onChangeText={setPassword} value={password} />
         </View>
         <View style={styles.inputForm}>
           <InputLabelText text={'Email'} />
-          <TextInput textContentType={'emailAddress'} />
+          <TextInput
+            textContentType={'emailAddress'}
+            onChangeText={setEmail}
+            value={email}
+          />
         </View>
         <Button
-          onPress={() => router.navigate('/auth/verification')}
+          onPress={() => AuthApi.register(router, username, email, password)}
           style={styles.button}
-          text={'Selanjutnya'}
+          text={'Daftar'}
         />
       </View>
       <View style={styles.textContainer}>

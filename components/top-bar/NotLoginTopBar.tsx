@@ -1,8 +1,8 @@
+import MediumButton from '@/components/button/MediumButton';
+import FontAwesome from '@expo/vector-icons/build/FontAwesome';
+import { Router, useRouter } from 'expo-router';
 import React from 'react';
 import { Pressable, StyleSheet, View } from 'react-native';
-import FontAwesome from '@expo/vector-icons/build/FontAwesome';
-import MediumButton from '@/components/button/MediumButton';
-import { Router, useRouter } from 'expo-router';
 
 function NotLoginTopBar() {
   const router: Router = useRouter();
@@ -28,6 +28,7 @@ const styles = StyleSheet.create({
     paddingVertical: 12,
     paddingHorizontal: 24,
     backgroundColor: 'white',
+    paddingTop: 32,
   },
 });
 

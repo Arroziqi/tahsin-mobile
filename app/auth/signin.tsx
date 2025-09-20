@@ -1,30 +1,34 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import InputLabelText from '@/components/label/InputLabelText';
-import TextInput from '@/components/input/CustomTextInput';
 import Button from '@/components/button/Button';
+import TextInput from '@/components/input/CustomTextInput';
+import PasswordInput from '@/components/input/PasswordInput';
+import InputLabelText from '@/components/label/InputLabelText';
 import TextLink from '@/components/text/TextLink';
 import { useRouter } from 'expo-router';
-import PasswordInput from '@/components/input/PasswordInput';
+import React from 'react';
+import { StyleSheet, Text, View } from 'react-native';
+import AuthApi from '../api/auth/auth';
 
 function Signin() {
   const router = useRouter();
+
+  const [username, setUsername] = React.useState('');
+  const [password, setPassword] = React.useState('');
 
   return (
     <View style={styles.container}>
       <View style={styles.formContainer}>
         <View style={styles.inputForm}>
           <InputLabelText text={'Username'} />
-          <TextInput />
+          <TextInput onChangeText={setUsername} value={username} />
         </View>
         <View style={styles.inputForm}>
           <InputLabelText text={'Password'} />
-          <PasswordInput />
+          <PasswordInput onChangeText={setPassword} value={password} />
         </View>
         <Button
           style={styles.button}
           text={'Masuk'}
-          onPress={() => router.navigate('/(tabs)/home-login')}
+          onPress={() => AuthApi.login(router, username, password)}
         />
       </View>
       <View style={styles.textContainer}>
