@@ -1,50 +1,107 @@
-# Welcome to your Expo app 👋
+# 📱 Tahsin App – Mobile
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Aplikasi **Tahsin App Mobile** adalah klien resmi berbasis [Expo](https://expo.dev) yang mendukung Android dan iOS.  
+Aplikasi ini digunakan oleh peserta dan guru untuk mengakses fitur-fitur pembelajaran *tahsin* secara praktis dari perangkat seluler.
 
-## Get started
+---
 
-1. Install dependencies
+## 🚀 Fitur Utama
+- **Autentikasi**: Sign in, sign up, dan verifikasi akun.
+- **Manajemen Kelas & Jadwal**: Melihat jadwal kelas tahsin yang sedang diikuti.
+- **Pendaftaran & Perpanjangan**: Registrasi kelas baru atau perpanjangan tahsin.
+- **Monitoring Progres**: Melihat perkembangan bacaan, nilai, dan catatan guru.
+- **Pembayaran**: Akses informasi pembayaran dan status tagihan.
+- **Profil Pengguna**: Update data pribadi dan foto profil.
+- **Pengumuman**: Membaca berita atau informasi terbaru dari lembaga.
+
+---
+
+## 📁 Struktur Folder (Ringkas)
+
+```
+
+app
+├── api/                # Endpoint API & autentikasi
+├── auth/               # Sign in, sign up, verifikasi
+├── (course-management) # Registrasi & perpanjangan
+├── (tabs)              # Bottom tab: home, payment, profile, schedule
+├── onboarding/         # Tampilan awal (splash / intro)
+├── index.tsx           # Entry point
+└── \_layout.tsx
+
+assets
+├── fonts/              # Font (Plus Jakarta Sans, Poppins, SpaceMono)
+└── images/             # Icon, splash screen, dll
+
+components
+├── bottom-tabs/
+├── button/
+├── card/
+├── indicator/
+├── input/
+├── label/
+├── modal/
+├── text/
+├── top-bar/
+└── lainnya…
+
+````
+
+---
+
+## 🏁 Getting Started
+
+> Pastikan kamu sudah menginstal [Node.js](https://nodejs.org), [Expo CLI](https://docs.expo.dev/get-started/installation/), dan emulator Android/iOS atau aplikasi **Expo Go**.
+
+1. **Clone repository**
+   ```bash
+   git clone https://github.com/Arroziqi/tahsin-mobile.git
+   cd tahsin-mobile
+   ````
+
+2. **Install dependencies**
 
    ```bash
    npm install
+   # atau
+   yarn install
    ```
 
-2. Start the app
+3. **Jalankan aplikasi**
 
    ```bash
    npx expo start
    ```
 
-In the output, you'll find options to open the app in a
+   * Scan QR code dengan **Expo Go** di ponsel.
+   * Atau buka di emulator Android/iOS.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+4. (Opsional) **Reset ke proyek kosong**
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+   ```bash
+   npm run reset-project
+   ```
 
-## Get a fresh project
+---
 
-When you're ready, run:
+## 🔗 Repositori Terkait
 
-```bash
-npm run reset-project
-```
+* [Tahsin App – Server API](https://github.com/Arroziqi/tahsin-app-server-monolith.git)
+* [Tahsin App – Web Client](https://github.com/Arroziqi/tahsin-web.git)
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+---
 
-## Learn more
+## 🧱 Teknologi
 
-To learn more about developing your project with Expo, look at the following resources:
+* [React Native](https://reactnative.dev/)
+* [Expo](https://expo.dev/)
+* [React Navigation](https://reactnavigation.org/)
+* [Axios](https://axios-http.com/) – komunikasi dengan API
+* [TypeScript](https://www.typescriptlang.org/)
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+---
 
-## Join the community
+## 📄 Lisensi
 
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Proyek ini dirilis di bawah lisensi **MIT**.
+Lihat file [LICENSE](LICENSE) untuk detail.
